@@ -1,0 +1,22 @@
+Ich versichere hiermit, dass ich meine \dhbwGetTextType{} mit dem Thema:
+
+\begin{center}
+    \textbf{%
+        {\large \dhbwGetTitle{}}\\
+        \ifdef{\dhbwGetSubtitle{}}{%
+            \dhbwGetSubtitle{}
+        }{}
+    }
+\end{center}
+
+selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+Ich versichere zudem, dass die eingereichte elektronische Fassung mit der gedruckten Fassung übereinstimmt.
+
+\vspace{1cm}
+\dhbwGetLocation{},\ \dhbwGetDate{}
+\hfill
+\begin{minipage}[t]{5.5cm}
+    \centering
+    \dotfill \\
+    \dhbwGetAuthor{}
+\end{minipage}
