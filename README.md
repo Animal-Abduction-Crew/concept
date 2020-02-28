@@ -24,7 +24,7 @@ Open the command palette and run `LaTeX Workshop: Build LaTeX Project`.
 ### Add a section
 
 1. Create a feature branch (e.g. `git checkout -b feature/yolo_section`).
-2. Write some lines.
+2. Write some lines! If you want to add an image add it in the `src/content/assets` folder.
 3. Commit and push your changes to GitHub.
 4. Submit a new [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) to merge your changes to the `master` branch.
 5. Repeat!
