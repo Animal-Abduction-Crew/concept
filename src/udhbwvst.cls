@@ -137,10 +137,9 @@
   \RequirePackage{blindtext, lipsum}
 }{}
 
-\ifbool{udhbwvst@if@print@ndn}{%
-  \RequirePackage{rotating}
-  \RequirePackage[absolute]{textpos}
-}{}
+
+\RequirePackage{rotating}
+\RequirePackage[absolute]{textpos}
 
 % style
 
