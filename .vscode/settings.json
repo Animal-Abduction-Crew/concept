@@ -1,0 +1,31 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "cSpell.language": "de,en",
+    "cSpell.enabled": true,
+    "latex-workshop.latex.recipes": [{
+        "name": "latexmk 🔃",
+        "tools": [
+            "latexmk"
+        ]
+    }],
+    "latex-workshop.latex.tools": [{
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-shell-escape",
+            "-pdf",
+            "-pdflatex=lualatex",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+        ]
+    }],
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.chktex.enabled": false,
+    "editor.tabCompletion": "onlySnippets",
+    "latex-workshop.latex.autoBuild.run": "never"
+}
