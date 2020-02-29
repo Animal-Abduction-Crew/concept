@@ -1,0 +1,41 @@
+\dhbwAppendix{app:object_detection_training_ad}
+
+Aktivitätsdiagram für das Training eines YOLO Modells
+
+\begin{plantuml}    
+@startuml
+start
+:Bilder aufzeichnen;
+:Bilder labeln;
+:Bilder in Trainings- und Verifizierungsdaten aufteilen;
+:Basismodell auswählen;
+repeat
+    :Modell konfigurieren;
+    :Modell einlernen;
+repeat while (Modell funktional?) is (nein)
+->ja;
+stop
+@enduml
+\end{plantuml}
+
+\dhbwAppendix{app:actual_objecti_detection_ad}
+
+Aktivitätsdiagram für die Objekterkennung auf dem Raspberry Pi
+
+\begin{plantuml}
+@startuml
+start
+:Starte separaten Thread;
+:Lade YOLO-Modell;
+repeat
+    :Zeichne Bild auf;
+    :Verarbeite Bild;
+    while (CPU-Temperatur zu hoch?)
+        :Warte;
+    endwhile
+    
+repeat while (Stop Signal?) is (nein)
+->ja;
+stop
+@enduml
+\end{plantuml}

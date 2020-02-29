@@ -1,4 +1,4 @@
-\documentclass[title-style=modern,print-ndn=false,auto-generate=false,bib-file=content/literature.bib]{udhbwvst}
+\documentclass[title-style=modern,plantuml=true,print-ndn=false,auto-generate=false,bib-file=content/literature.bib]{udhbwvst}
 
 \dhbwSetup{%
     author          = Adrian Stengle und Simon E\ss{linger},
@@ -14,6 +14,7 @@
 }
 
 \usepackage{booktabs} % pretty tables
+\usepackage{svg}
 
 \input{content/acronyms.tex}
 
@@ -34,13 +35,17 @@
 
 \dhbwSetMainMatter
 
-% \input{content/text/01_Aufgabenstellung.tex}
-% \input{content/text/02_Vorgaben.tex}
-% \input{content/text/03_Konzept.tex}
-% \input{content/text/04_Anforderungen.tex}
-% \input{content/text/05_Aufbau_des_Roboters.tex}
-% \input{content/text/06_Modell.tex}
+\input{content/text/01_Aufgabenstellung.tex}
+\input{content/text/02_Vorgaben.tex}
+\input{content/text/03_Konzept.tex}
+\input{content/text/04_Anforderungen.tex}
+\input{content/text/05_Aufbau_des_Roboters.tex}
+\input{content/text/06_Modell.tex}
 \input{content/text/07_Objekterkennung.tex}
+
+\begin{dhbwappendices}
+\input{content/text/07_Objekterkennung_appendices.tex}
+\end{dhbwappendices}
 
 \dhbwPrintBibliography
 
