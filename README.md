@@ -1,4 +1,4 @@
-# AAC1 - Software concept
+# AAR - Software concept
 
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/Animal-Abduction-Crew/concept/CI/master)](https://github.com/Animal-Abduction-Crew/concept/actions) [![GitHub](https://img.shields.io/github/license/Animal-Abduction-Crew/concept)](https://github.com/Animal-Abduction-Crew/concept/blob/master/LICENSE)
 
