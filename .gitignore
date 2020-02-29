@@ -275,3 +275,6 @@ TSWLatexianTemp*
 # End of https://www.gitignore.io/api/latex
 
 src/main.pdf
+
+*-plantuml.latex
+*-plantuml.txt
