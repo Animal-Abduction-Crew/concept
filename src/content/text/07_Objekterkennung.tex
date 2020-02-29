@@ -4,4 +4,37 @@
 
 % Erstellen Sie sowohl für die Vorbereitungsphase als auch für den eigentlichen Ablauf des Algorithmus ein detailliertes Ablaufdiagramm. Auch hier können Sie bspw. auf das Aktivitätsdiagramm der UML zurückgreifen, aber auch eine andere Diagrammform verwenden.
 
+Für die Identifizierung des gesuchten Plüschtiers wird eine optische Objekterkennung genutzt.
+Das RB-Camera-WW-Modul kann über die \ac{CSI} Schnittstelle mit dem Raspberry Pi verbunden werden und unter Raspbian ohne die Installation von zusätzlichen Softwarepaketen ausgelesen werden.\ifootcite{raspicam}
+
+Unter Objekterkennung versteht man das Verfahren zum Identifizieren bekannter Objekte innerhalb eines Objektraums. So wird z.B. das Vorhandensein eines Objektes in einem digitalen Bild und dessen Position und Lage bestimmt.
+Dieses Vorgehen ist nicht zu verwechseln mit der Objektklassifizierung, bei welcher ein Objekt lediglich auf Zugehörigkeit zu zuvor definierten Kategorien untersucht wird.
+Derzeit wird grundsätzlich zwischen zwei Methoden der Objekterkennung unterschieden.
+Beim Ansatz des maschinellen Lernens werden zunächst manuell Merkmale definiert, welche dann mit Methoden, wie z.B. der Viola-Jones-Methode, maschinell erkannt werden können.\ifootcite{viola_jones}
+Der Deep-Learning-Ansatz hingegen setzt lediglich eine große Menge zuvor klassifizierter Objekte voraus.
+Unter Verwendung eines \ac{CNN} setzen Girshick, Donahue, Darrell und Malik 2013 mit \ac{R-CNN} diesen Ansatz erstmals um.\ifootcite{rcnn}
+Mit dem \ac{SSD} Ansatz und dem \ac{YOLO} Ansatz wurden in 2015 die Anforderungen an Rechenkapazität für die Durchführung der Objekterkennung deutlich reduziert.\ifootcite{ssd,yolov1}
+In 2018 veröffentlichten Redmon und Farhadi die dritte Version des \ac{YOLO} Algorithmus, welche z.Z. die schnellste und gleichzeit auch eine akkurate Objekterkennung ist.\ifootcite{yolov3}
+
+\ac{YOLO} in der Version 3 wendet im Gegensatz zu vorherigen Methoden ein einziges neuronales Netz auf das gesamte Bild an. Dieses Netzwerk unterteilt das Bild in Regionen und sagt für jede Region Bounding Boxes und Wahrscheinlichkeiten voraus.
+So betrachtet der Algorithmus das gesamte Bild zur Testzeit, wodurch auch der globale Kontext berücksichtigt wird. So werden die Vorhersagen mit einer einzigen Netzwerkauswertung erstellt, im Gegensatz zu Systemen wie \ac{R-CNN}, die Tausende für ein einziges Bild benötigen.\ifootcite{yolov3_homepage}
+
+
+
+% warum yolo? weil schnell
+% wie funktioniert yolo?
+% ablauf diagram von yolo. auch open cv nicht vergessen
+% was braucht man für yolo? config und weights
+
+% lernverfahren
+% bilder aufnehmen
+% bilder labeln mit labelImg
+% verteilen auf den kurs
+% bilder in jpg umwandeln und etwas komprimieren
+% google colab
+% welche config hat am besten performt?
+
+% challenge: heat => heatsink
+
+\ifootcite{opencv_darknet_support}
 \ifootcite{yolov3}
