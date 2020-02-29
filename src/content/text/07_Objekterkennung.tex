@@ -19,7 +19,23 @@ In 2018 veröffentlichten Redmon und Farhadi die dritte Version des \ac{YOLO} Al
 \ac{YOLO} in der Version 3 wendet im Gegensatz zu vorherigen Methoden ein einziges neuronales Netz auf das gesamte Bild an. Dieses Netzwerk unterteilt das Bild in Regionen und sagt für jede Region Bounding Boxes und Wahrscheinlichkeiten voraus.
 So betrachtet der Algorithmus das gesamte Bild zur Testzeit, wodurch auch der globale Kontext berücksichtigt wird. So werden die Vorhersagen mit einer einzigen Netzwerkauswertung erstellt, im Gegensatz zu Systemen wie \ac{R-CNN}, die Tausende für ein einziges Bild benötigen.\ifootcite{yolov3_homepage}
 
-
+\begin{dhbwtable}{%
+    caption	= Performance verschiedener Modelle,
+    label	= tab:model_perf,
+    source	= Eigene Messungen,
+}
+    \begin{tabular}{llll}
+        \toprule
+        \textbf{Modell}     & \textbf{Auflösung}    & \textbf{Bilder pro Sekunde}   & \textbf{Genauigkeit}\\\midrule
+        yolov3-tiny         & 128x128               & 5                             & 4\\
+        yolov3-tiny         & 192x128               & 5                             & 6\\
+        yolov3-tiny         & 256x192               & 3                             & 7\\
+        yolov3-tiny-3l      & 192x128               & 4                             & 8\\
+        yolov3-tiny-3l      & 256x192               & 2                             & 9\\
+        yolov3              & 192x128               & 0                             & 0\\
+        yolov3              & 128x128               & 0                             & 0\\\bottomrule
+    \end{tabular}    
+\end{dhbwtable}
 
 % warum yolo? weil schnell
 % wie funktioniert yolo?
