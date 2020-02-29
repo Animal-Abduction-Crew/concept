@@ -19,15 +19,14 @@ jobs:
           java -jar $PLANTUML_JAR -version
       - name: Build PDF
         run: |
-          latexmk \
+          cd src && latexmk \
             -synctex=1 \
             -interaction=nonstopmode \
             -file-line-error \
             -shell-escape \
             -pdf \
             -pdflatex=lualatex \
-            -outdir=src \
-            src/main.tex
+            main
       - name: Upload build artifact
         uses: actions/upload-artifact@v1
         with:
