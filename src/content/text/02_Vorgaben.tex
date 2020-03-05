@@ -1,3 +1,30 @@
 \subsection{Vorgaben}
 
+\dhbwFigure{%
+    caption	= Spielfeld,
+    label	= fig:field,
+    path	= content/assets/spielfeld.png,
+    source	= Kickoff-Präsentation
+}
+
+\autoref{fig:field} zeigt die Dimensionen des Spielfelds in der Vogelperspektive, in welchem der Roboter ein vorher definiertes Plüschtier erkennen soll und dieses aus dem Spielfeld entfernen soll, wobei folgende Vorgaben eingehalten werden müssen:
+
+\begin{itemize}
+    \item Im Spielfeld befinden sich gleichzeitig 3 von 5 möglichen Stofftieren (Tiger, Katze, Elefant, Frosch und Stern).
+    \item Je ein Tier steht im 1., 2., oder 3. virtuellen Drittel des Spielfelds.
+    \item Alle Tiere stehen außerhalb des virtuellen Mittel-Korridors (s. \autoref{fig:field}).
+    \item Das vorderste Tier hat mindestens 100 cm Abstand von der Startlinie.
+    \item Das Tier im mittleren Drittel steht in einer anderen virtuellen „Spielhälfte“ als die beiden anderen Tiere.
+    \item Der Roboter muss ein vorgegebenes Tier erkennen und einzeln aus dem Spielfeld (d. h. 5-35 cm Abstand zur Außenlinie) bringen (es zählt nur die Position des Tieres, nicht die des Roboters).
+    \item Der Roboter muss das Tier autonom einsammeln (ohne Fernsteuerung o.Ä.).
+    \item Der Robotor muss vier Durchläufe absolvieren, wobei die besten drei gewertet werden.
+    \item Die Tiere sind jeweils zufällig platziert.
+    \item Der Roboter muss die Durchläufe in jeweils 60 Sekunden absolvieren. Falls das Tier nach 60 Sekunden nicht aus dem Feld entfernt wurde, stehen maximal 30 weitere Sekunden zu Verfügung.
+    \item Die Bauteile des Roboters dürfen in Summe maximal 70€ kosten.
+    \item Die Basiskonstruktion soll primär aus gegebenen Holzstangen bestehen.
+    \item Schließlich muss ein Raspberry Pi 3 B verwendet werden.
+\end{itemize}
+
+\ifootcite{kickoff}
+
 % Anforderungen / Limitierungen des Roboters, welche von den Dozenten festgelegt wurden.
