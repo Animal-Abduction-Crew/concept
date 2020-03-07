@@ -1,129 +1,121 @@
 \subsection{Use-Cases}
 
-\subsubsection{Use-Case: Tier auswählen}
-
 \begin{dhbwtable}{%
     caption	= Use-Case: Tier auswählen,
     label	= tab:use_case_select_animal,
-    source	= Eigene Darstellung
+    source	= Eigene Darstellung,
+    float = h!
 }
-    \begin{tabular}{ll}
+    \begin{tabularx}{\textwidth}{lX}
         \toprule
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Roboter befindet sich in der Startsituation.\\
         Komponenten  & Mikrofon, Lautsprecher, Raspberry\\
         Beschreibung & Anwender spricht das Wakeword aus, gefolgt von einer Tierauswahl. Der \ac{AAR} erkennt die Auswahl und startet die Tiersuche.\\\bottomrule
-    \end{tabular}    
+    \end{tabularx}    
 \end{dhbwtable}
-
-\subsubsection{Use-Case: Tier auffinden}
 
 \begin{dhbwtable}{%
     caption	= Use-Case: Tier auffinden,
     label	= tab:use_case_find_animal,
-    source	= Eigene Darstellung
+    source	= Eigene Darstellung,
+    float = h!
 }
-    \begin{tabular}{ll}
+    \begin{tabularx}{\textwidth}{lX}
         \toprule
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Tier wurde per Spracheingabe ausgewählt.\\
         Komponenten  & Kamera, Antrieb links, Antrieb rechts, Ultraschallsensor links, Ultraschallsensor rechts\\
         Beschreibung & Der \ac{AAR} fährt geradeaus durch das Spielfeld und versucht mit der Kamera das gesuchte Tier zu identifizieren und bleibt stehen, wenn das richtige Tier gefunden wurde.\\\bottomrule
-    \end{tabular}    
+    \end{tabularx}    
 \end{dhbwtable}
-
-\subsubsection{Use-Case: Auf Tier ausrichten}
 
 \begin{dhbwtable}{%
     caption	= Use-Case: Auf Tier ausrichten,
     label	= tab:use_case_turn_to_animal,
-    source	= Eigene Darstellung
+    source	= Eigene Darstellung,
+    float = h!
 }
-    \begin{tabular}{ll}
+    \begin{tabularx}{\textwidth}{lX}
         \toprule
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Das gesuchte Tier wurde gefunden.\\
         Komponenten  & Kamera, Antrieb links, Antrieb rechts\\
         Beschreibung & Der \ac{AAR} dreht sich so lange, bis er direkt in Fahrtrichtung auf das gesuchte Tier ausgerichtet ist.\\\bottomrule
-    \end{tabular}    
+    \end{tabularx}    
 \end{dhbwtable}
-
-\subsubsection{Use-Case: Zum Tier fahren}
 
 \begin{dhbwtable}{%
     caption	= Use-Case: Zum Tier fahren,
     label	= tab:use_case_go_to_animal,
-    source	= Eigene Darstellung
+    source	= Eigene Darstellung,
+    float = h!
 }
-    \begin{tabular}{ll}
+    \begin{tabularx}{\textwidth}{lX}
         \toprule
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Der \ac{AAR} ist auf das gesuchte Tier ausgerichtet.\\
         Komponenten  & Kamera, Antrieb links, Antrieb rechts, Infrarotsensor\\
         Beschreibung & Der \ac{AAR} fährt auf das erkannt Tier zu, bis der Infrarotsensor feststellt, dass das Tier direkt vor den Greifern des \acp{AAR} steht.\\\bottomrule
-    \end{tabular}    
+    \end{tabularx}    
 \end{dhbwtable}
-
-\subsubsection{Use-Case: Tier greifen}
 
 \begin{dhbwtable}{%
     caption	= Use-Case: Tier greifen,
     label	= tab:use_case_grab_animal,
-    source	= Eigene Darstellung
+    source	= Eigene Darstellung,
+    float = h!
 }
-    \begin{tabular}{ll}
+    \begin{tabularx}{\textwidth}{lX}
         \toprule
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Das gesuchte Tier befindet sich direkt vor den Greifern des \acp{AAR}. \\
         Komponenten  & Greiferantrieb links, Greiferantrieb rechts, Schließtaster \\
         Beschreibung & Der \ac{AAR} schließt den linken und rechten Greifer, bis der Schließtaster ausgelöst wird.\\\bottomrule
-    \end{tabular}    
+    \end{tabularx}    
 \end{dhbwtable}
-
-\subsubsection{Use-Case: Tier aus dem Spielfeld fahren}
 
 \begin{dhbwtable}{%
     caption	= Use-Case: Tier aus dem Spielfeld fahren,
     label	= tab:use_case_move_animal,
-    source	= Eigene Darstellung
+    source	= Eigene Darstellung,
+    float = h!
 }
-    \begin{tabular}{ll}
+    \begin{tabularx}{\textwidth}{lX}
         \toprule
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Das gesuchte Tier befindet sich in den geschlossenen Greifern des \acp{AAR}.\\
         Komponenten  & Antrieb links, Antrieb rechts, Liniensensor links, Liniensensor rechts\\
         Beschreibung & \\\bottomrule
-    \end{tabular}    
+    \end{tabularx}    
 \end{dhbwtable}
-
-\subsubsection{Use-Case: Tier loslassen}
 
 \begin{dhbwtable}{%
     caption	= Use-Case: Tier loslassen,
     label	= tab:use_case_release_animal,
-    source	= Eigene Darstellung
+    source	= Eigene Darstellung,
+    float = h!
 }
-    \begin{tabular}{ll}
+    \begin{tabularx}{\textwidth}{lX}
         \toprule
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     &\\
         Komponenten  & \\
         Beschreibung & \\\bottomrule
-    \end{tabular}    
+    \end{tabularx}    
 \end{dhbwtable}
-
-\subsubsection{Use-Case: Vom Tier entfernen}
 
 \begin{dhbwtable}{%
     caption	= Use-Case: Vom Tier entfernen,
     label	= tab:use_case_leave_animal,
-    source	= Eigene Darstellung
+    source	= Eigene Darstellung,
+    float = h!
 }
-    \begin{tabular}{ll}
+    \begin{tabularx}{\textwidth}{lX}
         \toprule
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     &\\
         Komponenten  & \\
         Beschreibung & \\\bottomrule
-    \end{tabular}    
+    \end{tabularx}    
 \end{dhbwtable}
