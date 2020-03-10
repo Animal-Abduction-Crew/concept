@@ -1,8 +1,18 @@
 \subsection{Aufbau des Roboters}
 
+Unser Roberter trägt den Namen "animal abduction robot" zu deutsch Tier-Entführungsroboter, da es wie oben beschieben seine Aufgabe ist Tiere zu finden und zu bewegen.
+
+Der nachfolgende Abschnitt behandelt hierbei wie der AAR aufgebaut ist und welche Sensoren und Komponenten hierbei für welche zwecke eingesetzt werden. Zudem wird im weiteren auf die Belegung der einzelnen GPIO Pins des Raspberry Pi eingegangen.
 % erklärung name (aar = animal abduction robot)
 
 \subsubsection{Skizze}
+
+Auf dem nachfolgenden Bild sieht man den AAR von oben. Auffallend ist der größe Greifmechanismus, welcher die vordere Hälfte des AAR einnimmt. Die hintere Hälfte des AAR bist recht schmal gehalten und beinhaltet sämtliche Elektronik, wie den Akku, den Raspberry Pi, ein Breadboard und eine vielzahl an Sensoren. 
+
+Hierbei ist zu beachten, dass sie die Ultraschallsensoren noch nicht an dem Roboter befinden, da diese nur genutzt werden, falls die Bilderkennung nicht so gut funktionieren sollte wie angenommen.
+Falls sich ein Tier seitlich des AAR befinden sollte würde es eine besonders hohe Entfernung anzeigen, da die Tiere den Schall der Ultraschallsensoren schlucken würde. So können wir bestimmen ob sich dort ein Tier befindet und den AAR darauf ausrichten. 
+
+Die Hauptbestandteile des AAR und ihre Aufgaben werden mithilfe der nachfolgenden Skizze und der unten stehenden Tabelle "Aufbau Roboter" genauer erläutert.
 
 \dhbwFigure{%
     caption	= Animal Abduction Robot,
@@ -12,8 +22,8 @@
 }
 
 \begin{dhbwtable}{%
-    caption	= Aubau Roboter,
-    label	= tab:show_parts_at_aac,
+    caption	= Aufbau Roboter,
+    label	= tab:show_parts_at_aar,
     source	= Eigene Darstellung,
 }
     \begin{tabular}{llll}
@@ -21,8 +31,8 @@
         \textbf{Nummer}     & \textbf{Bauteil}      &\textbf{Beschreibung}   \\\midrule
         1   	            & Akku                  & Stromversorgung für Motoren und Raspberry Pi\\
         2                   & Raspberry Pi          & Recheneinheit und Ansteuerungsmodul \\
-        3                   & Ultraschallsensor rechts   & Erkennung falls sich ein Tier Rechts des ACC befindet  \\
-        4                   & Ultraschallsensor links   & Erkennung falls sich ein Tier Links des ACC befindet  \\
+        3                   & Ultraschallsensor rechts   & Erkennung falls sich ein Tier Rechts des AAR befindet  \\
+        4                   & Ultraschallsensor links   & Erkennung falls sich ein Tier Links des AAR befindet  \\
         5                   & H-Brücke für den Greifer   & Steuert die Motoren für den Greifer an   \\
         6                   & H-Brücke für den Antrieb   & Steuert die Motoren des Antriebes an   \\
         7                   & Spannungswandler   & regelt die Spannung des Akkus für den Raspberry auf 5 Volt runter  \\
@@ -30,15 +40,14 @@
         9                   & Motor+Getriebe Greifer links   & bewegt den linken Teil des Greifarms  \\
         10                  & Infrarot links   & erkennt eine Linie auf der linken Seite  \\
         11                  & Infrarot rechts   & erkennt eine Linie auf der rechten Seite  \\
-        12                  & Infrarot mitte   & erkennt ob sich ein Tier vor dem AAC befindet  \\
+        12                  & Infrarot mitte   & erkennt ob sich ein Tier vor dem AAR befindet  \\
         13                  & Kamera   & wird für die Objekterkennung genutzt  \\
         14                  & Antriebsmotor rechts   & dreht das rechte Rad  \\
-        15                  & Antriebsmotor links   & dreht das linke Rad  \\
-
-        
-        \bottomrule
+        15                  & Antriebsmotor links   & dreht das linke Rad  \\\bottomrule
     \end{tabular}    
 \end{dhbwtable}
+
+
 
 
 % bild
@@ -46,6 +55,9 @@
 % warum diese komponenten?; ultraschall-geschichte...
 
 \subsubsection{Schaltplan}
+Da wir durch den Greifmechanismus und die Notlösung mit hilfe der Ultraschallsensor einen relativ hohe Anzahl an Komponenten besitzen, welche angesteuert oder ausgelesen werden müssen, ist es für uns besonders wichtig einen Überblick zu haben, wie die Sensoren miteinander angeschlossen sind und an welchen GPIO Pins sich die Ein- und Ausgange befinden.
+
+Im nachfolgenden ist ein fritzing wiring diagram zu sehen, welches die Verkabelung aller Komponenten, über ein Breadboard mit dem Raspberry Pi darstellt.
 
 \dhbwFigure{%
     caption	= Schaltplan Respberry Pi,
@@ -53,5 +65,36 @@
     path	= content/assets/Roboter_Steckplatine.png,
     source	= Eigene Darstellung
 }
+
+
+
+\begin{dhbwtable}{%
+    caption	= Belegung der GPIO Pins,
+    label	= tab:gpio_pins,
+    source	= Eigene Darstellung,
+}
+    \begin{tabular}{llll}
+        \toprule
+        \textbf{Bauteil}    & \textbf{GPIO Pin}     &\textbf{Funktion}   \\\midrule
+        Motor rechts   	    & 18                    & Fahrtrichtung vorwärts\\
+                            & 15                    & Fahrtrichtung rückwärts \\
+                            & 14(PWM)               & einstellung der Geschwindigkeit\\
+        Motor links   	    & 7                     & Fahrtrichtung vorwärts\\
+                            & 1                     & Fahrtrichtung rückwärts \\
+                            & 12(PWM)               & einstellung der Geschwindigkeit\\    
+        Motoren Greifer   	& 5                     & Greifer öffnen\\
+                            & 6                     & Greifer schließen \\
+                            & 13(PWM)               & einstellung der Geschwindigkeit\\
+        Ultraschall rechts 	& 11                    & Trigger\\
+                            & 9                     & Echo \\
+        Ultraschall links   & 20                    & Trigger\\
+                            & 16                    & Echo \\ 
+        Infrarot links      & 2                     & Input\\
+        Infrarot rechts     & 3                     & Input\\
+        Infrarot mitte      & 4                     & Input\\        
+   \bottomrule
+    \end{tabular}    
+\end{dhbwtable}
+
 
 % fritzing wiring diagram
