@@ -1,1 +1,24 @@
 \subsection{Gesamtablaufdiagram}
+
+\begin{dhbwfigure}{%
+    caption	= Gesamtablaufdiagram,
+    label	= fig:total_ad
+}
+
+\begin{plantuml}
+    @startuml
+    start
+    :Tier auswählen;
+    while (Tier gefunden?)
+        :Tier auffinden;
+    endwhile
+    :Auf Tier ausrichten;
+    :Zum Tier fahren;
+    :Tier greifen;
+    :Tier aus dem Spielfeld fahren;
+    :Tier loslassen;
+    end
+    @enduml
+\end{plantuml}
+    
+\end{dhbwfigure}
