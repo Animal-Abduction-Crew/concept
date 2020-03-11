@@ -1,17 +1,10 @@
 \subsection{Aufbau des Roboters}
-Unser Roberter trägt den Namen "animal abduction robot" zu deutsch Tier-Entführungsroboter, da es wie oben beschieben seine Aufgabe ist Tiere zu finden und zu bewegen.
+Der Name \ac{AAR} (zu deutsch \enquote{Tier-Entführungsroboter}) leitet sich von der zuvor beschriebenen Aufgabe ab, Tiere zu finden und zu bewegen.
 
-Der nachfolgende Abschnitt behandelt hierbei wie der AAR aufgebaut ist und welche Sensoren und Komponenten hierbei für welche zwecke eingesetzt werden. Zudem wird im weiteren auf die Belegung der einzelnen GPIO Pins des Raspberry Pi eingegangen.
-% erklärung name (aar = animal abduction robot)
+Folgend wird nun beschrieben, wie der \ac{AAR} aufgebaut ist und welche Sensoren bzw. Komponenten für welche Zwecke eingesetzt werden.
+Außerdem wird auf die Belegung der einzelnen \ac{GPIO} Pins des Raspberry Pis eingegangen.
 
 \subsubsection{Skizze}
-
-Auf dem nachfolgenden Bild sieht man den AAR von oben. Auffallend ist der größe Greifmechanismus, welcher die vordere Hälfte des AAR einnimmt. Die hintere Hälfte des AAR bist recht schmal gehalten und beinhaltet sämtliche Elektronik, wie den Akku, den Raspberry Pi, ein Breadboard und eine vielzahl an Sensoren. 
-
-Hierbei ist zu beachten, dass sie die Ultraschallsensoren noch nicht an dem Roboter befinden, da diese nur genutzt werden, falls die Bilderkennung nicht so gut funktionieren sollte wie angenommen.
-Falls sich ein Tier seitlich des AAR befinden sollte würde es eine besonders hohe Entfernung anzeigen, da die Tiere den Schall der Ultraschallsensoren schlucken würde. So können wir bestimmen ob sich dort ein Tier befindet und den AAR darauf ausrichten. 
-
-Die Hauptbestandteile des AAR und ihre Aufgaben werden mithilfe der nachfolgenden Skizze und der unten stehenden Tabelle "Aufbau Roboter" genauer erläutert.
 
 \dhbwFigure{%
     caption	= Animal Abduction Robot,
@@ -19,6 +12,14 @@ Die Hauptbestandteile des AAR und ihre Aufgaben werden mithilfe der nachfolgende
     path	= content/assets/aar.jpg,
     source	= Eigene Darstellung
 }
+
+\autoref{fig:aar} zeigt den \ac{AAR} von oben.
+Auffallend ist der größe Greifmechanismus, welcher die vordere Hälfte des \ac{AAR} einnimmt.
+Die hintere Hälfte des \ac{AAR} ist schmal gehalten und beinhaltet sämtliche Elektronik, wie den Akku, den Raspberry Pi, ein Breadboard und mehrere Sensoren. 
+
+Ursrünglich war vorgesehen Ultraschallsensoren zur Ergänzung der Objekterkennung einzusetzen.
+Falls sich ein Tier seitlich des \ac{AAR} befände, könnte es mit einem Ultraschallsensor erkannt werden, welcher eine höhere Entfernung detektierten würde, als die Entfernung zu den gekippten Tischen, welche das Spielfeld eingrenzen, da ein Plüschtier die Ultraschallsignale des Sensors absorbieren würde.
+Da die Objekterkennung aber zuverlässig funktioniert sind aktuell keine Ultraschallsensoren auf dem \ac{AAR} installiert.
 
 \begin{dhbwtable}{%
     caption	= Aufbau Roboter,
@@ -47,12 +48,7 @@ Die Hauptbestandteile des AAR und ihre Aufgaben werden mithilfe der nachfolgende
     \end{tabularx}    
 \end{dhbwtable}
 
-
-
-
-% bild
-% nennung und beschreibung der komponenten
-% warum diese komponenten?; ultraschall-geschichte...
+\autoref{tab:show_parts_at_aar} listet die Hauptkomponenten des \ac{AAR}, sowie eine Beschreibung derer Aufgaben.
 
 \subsubsection{Schaltplan}
 Da wir durch den Greifmechanismus und die Notlösung mit hilfe der Ultraschallsensor einen relativ hohe Anzahl an Komponenten besitzen, welche angesteuert oder ausgelesen werden müssen, ist es für uns besonders wichtig einen Überblick zu haben, wie die Sensoren miteinander angeschlossen sind und an welchen GPIO Pins sich die Ein- und Ausgange befinden.
