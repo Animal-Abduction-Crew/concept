@@ -1,5 +1,8 @@
 \subsection{Use-Cases}
 
+Nachfolgend werden die funktionalen Anforderungen an den \ac{AAR} in Form von Use-Cases beschrieben.
+Die Priorisierung erfolgt anhand einer Skala von 1 (niedrig) bis 5 (hoch).
+
 % TODO: add detailed descriptions below the use cases
 
 \begin{dhbwtable}{%
@@ -13,7 +16,8 @@
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Roboter befindet sich in der Startsituation.\\
         Komponenten  & Mikrofon, Lautsprecher, Raspberry\\
-        Beschreibung & Anwender spricht das Wakeword aus, gefolgt von einer Tierauswahl. Der \ac{AAR} erkennt die Auswahl und startet die Tiersuche.\\\bottomrule
+        Beschreibung & Anwender spricht das Wakeword aus, gefolgt von einer Tierauswahl. Der \ac{AAR} erkennt die Auswahl und startet die Tiersuche.\\
+        Priorität    & 5 \\\bottomrule
     \end{tabularx}    
 \end{dhbwtable}
 
@@ -28,7 +32,8 @@
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Tier wurde per Spracheingabe ausgewählt.\\
         Komponenten  & Kamera, Antrieb links, Antrieb rechts, Ultraschallsensor links, Ultraschallsensor rechts\\
-        Beschreibung & Der \ac{AAR} fährt geradeaus durch das Spielfeld und versucht mit der Kamera das gesuchte Tier zu identifizieren und bleibt stehen, wenn das richtige Tier gefunden wurde.\\\bottomrule
+        Beschreibung & Der \ac{AAR} fährt geradeaus durch das Spielfeld und versucht mit der Kamera das gesuchte Tier zu identifizieren und bleibt stehen, wenn das richtige Tier gefunden wurde.\\
+        Priorität    & 5 \\\bottomrule
     \end{tabularx}    
 \end{dhbwtable}
 
@@ -43,7 +48,8 @@
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Das gesuchte Tier wurde gefunden.\\
         Komponenten  & Kamera, Antrieb links, Antrieb rechts\\
-        Beschreibung & Der \ac{AAR} dreht sich so lange, bis er direkt in Fahrtrichtung auf das gesuchte Tier ausgerichtet ist.\\\bottomrule
+        Beschreibung & Der \ac{AAR} dreht sich so lange, bis er direkt in Fahrtrichtung auf das gesuchte Tier ausgerichtet ist.\\
+        Priorität    & 5 \\\bottomrule
     \end{tabularx}    
 \end{dhbwtable}
 
@@ -58,7 +64,8 @@
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Der \ac{AAR} ist auf das gesuchte Tier ausgerichtet.\\
         Komponenten  & Kamera, Antrieb links, Antrieb rechts, Infrarotsensor\\
-        Beschreibung & Der \ac{AAR} fährt auf das erkannt Tier zu, bis der Infrarotsensor feststellt, dass das Tier direkt vor den Greifern des \acp{AAR} steht.\\\bottomrule
+        Beschreibung & Der \ac{AAR} fährt auf das erkannt Tier zu, bis der Infrarotsensor feststellt, dass das Tier direkt vor den Greifern des \acp{AAR} steht.\\
+        Priorität    & 5 \\\bottomrule
     \end{tabularx}    
 \end{dhbwtable}
 
@@ -73,7 +80,8 @@
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Das gesuchte Tier befindet sich direkt vor den Greifern des \acp{AAR}. \\
         Komponenten  & Greiferantrieb links, Greiferantrieb rechts, Schließtaster \\
-        Beschreibung & Der \ac{AAR} schließt den linken und rechten Greifer, bis der Schließtaster ausgelöst wird.\\\bottomrule
+        Beschreibung & Der \ac{AAR} schließt den linken und rechten Greifer, bis der Schließtaster ausgelöst wird.\\
+        Priorität    & 4 \\\bottomrule
     \end{tabularx}    
 \end{dhbwtable}
 
@@ -88,7 +96,8 @@
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Das gesuchte Tier befindet sich in den geschlossenen Greifern des \acp{AAR}.\\
         Komponenten  & Antrieb links, Antrieb rechts, Liniensensor links, Liniensensor rechts\\
-        Beschreibung & Der \ac{AAR} fährt geradeaus bis ein Liniensensor die Linie detektiert. Auf der Seite, auf der die Linie erkannt wurde, wird der Antrieb abgeschalten, bis der andere Liniensensor die Linie erkennt. Danach fährt der \ac{AAR} geradeaus, bis er sich mindestens 10cm von der Linie entfernt hat.\\\bottomrule
+        Beschreibung & Der \ac{AAR} fährt geradeaus bis ein Liniensensor die Linie detektiert. Auf der Seite, auf der die Linie erkannt wurde, wird der Antrieb abgeschalten, bis der andere Liniensensor die Linie erkennt. Danach fährt der \ac{AAR} geradeaus, bis er sich mindestens 10cm von der Linie entfernt hat.\\
+        Priorität    & 5 \\\bottomrule
     \end{tabularx}    
 \end{dhbwtable}
 
@@ -103,7 +112,8 @@
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Der \ac{AAR} befindet sich mit dem gesuchten Tier mindestens 10cm außerhalb des Spielfelds.\\
         Komponenten  & Greiferantrieb links, Greiferantrieb rechts, Öffnungstaster\\
-        Beschreibung & Der \ac{AAR} schließt den linken und rechten Greifer, bis der Öffnungstaster ausgelöst wird.\\\bottomrule
+        Beschreibung & Der \ac{AAR} schließt den linken und rechten Greifer, bis der Öffnungstaster ausgelöst wird.\\
+        Priorität    & 4 \\\bottomrule
     \end{tabularx}    
 \end{dhbwtable}
 
@@ -118,6 +128,7 @@
         \textbf{Merkmal}     & \textbf{Beschreibung}  \\\midrule
         Auslöser     & Der \ac{AAR} steht mit geöffnetem Greifarmen vor dem außerhalb des Spielfelds stehenden gesuchten Tieres.\\
         Komponenten  & Antrieb links, Antrieb rechts\\
-        Beschreibung & Der \ac{AAR} entfernt sich 10cm rückwärts vom abgestellten Tier.\\\bottomrule
+        Beschreibung & Der \ac{AAR} entfernt sich 10cm rückwärts vom abgestellten Tier.\\
+        Priorität    & 3 \\\bottomrule
     \end{tabularx}    
 \end{dhbwtable}
