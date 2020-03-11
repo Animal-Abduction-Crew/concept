@@ -1,16 +1,21 @@
 \subsection{Anforderungen}
 
-\begin{dhbwtable}{%
-    caption	= Anforderungen,
-    label	= tab:requirements,
-    source	= Eigene Darstellung,
-}
+Fortfolgend werden die verbleibenden nicht funktionalen Anforderungen an den \ac{AAR} in einer Tabelle dokumentiert, wobei die aus \autoref{sec:use_cases} bekannte Skala wieder zur Priorisierung herangezogen wird.
 
-\begin{tabular}{llll}
-    \toprule
-    \textbf{Anforderung}     & \textbf{Typ}    & \textbf{Priorität}   & \textbf{Beschreibung}\\\midrule
-    Hardware              & nicht funktional               & 0                             & 0\\
-    yolov3              & 128x128               & 0                             & 0\\\bottomrule
-\end{tabular}   
-    
+\begin{dhbwtable}{%
+    caption	= Nicht funktionale Anforderungen,
+    label	= tab:non_func_reqs,
+    float = h!
+}
+    \begin{tabularx}{\textwidth}{lXX}
+        \toprule
+        \textbf{Anforderung} & \textbf{Priorität} & \textbf{Beschreibung}  \\\midrule
+        Hardware    &   5 & Raspberry Pi 3 Model B, Motore, H-Brücken, Pi Cam, Ultraschallsensoren, Infrarotsensoren, Lautsprecher, Mikrofon, Taster müssen zuverlässig funktionieren. \\
+        Betriebsystem & 5 & Raspbian Buster Lite  \\
+        Programmiersprache & 5 & Python 3.7 \\
+        Softwarebibliotheken & 5 & pigpio, OpenCV (inkl. OpenCV-contrib), rhasspy \\
+        Durchlaufzeit & 4 & Nach 60 Sekunden muss das gesuchte Tier außerhalb des Spielfelds sein. Alternativ nach spätestens 90 Sekunden. \\
+        \ac{CPU}-Temperatur & 4 & Die \ac{CPU}-Temperatur darf während eines Objekerkennungsvorgang nicht 70 Grad Celsius überschreiten.\\
+        Spracherkennungszeit & 4 & Die Verarbeitung eines Sprachbefehls darf nicht länger als zwei Sekunden dauern.
+    \end{tabularx}    
 \end{dhbwtable}
