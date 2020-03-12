@@ -1,4 +1,5 @@
 \subsection{Aufbau des Roboters}
+
 Der Name \ac{AAR} (zu deutsch \enquote{Tier-Entführungsroboter}) leitet sich von der zuvor beschriebenen Aufgabe ab, Tiere zu finden und zu bewegen.
 
 Folgend wird nun beschrieben, wie der \ac{AAR} aufgebaut ist und welche Sensoren bzw. Komponenten für welche Zwecke eingesetzt werden.
@@ -51,37 +52,32 @@ Da die Objekterkennung aber zuverlässig funktioniert sind aktuell keine Ultrasc
 \autoref{tab:show_parts_at_aar} listet die Hauptkomponenten des \ac{AAR}, sowie eine Beschreibung derer Aufgaben.
 
 \subsubsection{Schaltplan}
-Da wir durch den Greifmechanismus und die Notlösung mit hilfe der Ultraschallsensor einen relativ hohe Anzahl an Komponenten besitzen, welche angesteuert oder ausgelesen werden müssen, ist es für uns besonders wichtig einen Überblick zu haben, wie die Sensoren miteinander angeschlossen sind und an welchen GPIO Pins sich die Ein- und Ausgange befinden.
 
-In \autoref{app:wiring_diagram} ist ein Schaltplan zu sehen, welches die Verkabelung aller Komponenten, über ein Breadboard mit dem Raspberry Pi darstellt.
+Für die Umsetzung der spezifizieren Funktionalitäten, wie etwa der Greifmechanismus oder die alternative Suche nach Plüschtieren mit Ultraschallsensoren, müssen einige Komponenten über die \ac{GPIO}-Schnittstelle der Raspberry Pis angesteuert werden.
+In \autoref{app:wiring_diagram} ist ein Schaltplan zu sehen, welcher die Verkabelung aller Komponenten über ein Breadboard mit dem Raspberry Pi zeigt und \autoref{tab:gpio_pins} beschreibt, die Funktionalitäten der verwendeten Pins.
 
 \begin{dhbwtable}{%
     caption	= Belegung der GPIO Pins,
-    label	= tab:gpio_pins,
-    source	= Eigene Darstellung,
+    label	= tab:gpio_pins
 }
     \begin{tabular}{llll}
         \toprule
-        \textbf{Bauteil}    & \textbf{GPIO Pin}     &\textbf{Funktion}   \\\midrule
-        Motor rechts   	    & 18                    & Fahrtrichtung vorwärts\\
-                            & 15                    & Fahrtrichtung rückwärts \\
-                            & 14(PWM)               & einstellung der Geschwindigkeit\\
-        Motor links   	    & 7                     & Fahrtrichtung vorwärts\\
-                            & 1                     & Fahrtrichtung rückwärts \\
-                            & 12(PWM)               & einstellung der Geschwindigkeit\\    
-        Motoren Greifer   	& 5                     & Greifer öffnen\\
-                            & 6                     & Greifer schließen \\
-                            & 13(PWM)               & einstellung der Geschwindigkeit\\
-        Ultraschall rechts 	& 11                    & Trigger\\
-                            & 9                     & Echo \\
-        Ultraschall links   & 20                    & Trigger\\
-                            & 16                    & Echo \\ 
-        Infrarot links      & 2                     & Input\\
-        Infrarot rechts     & 3                     & Input\\
-        Infrarot mitte      & 4                     & Input\\        
-   \bottomrule
+        \textbf{Bauteil} & \textbf{\ac{GPIO}-Pin} & \textbf{Funktion} \\\midrule
+        Motor rechts   	    & 18        & Fahrtrichtung vorwärts\\
+                            & 15        & Fahrtrichtung rückwärts\\
+                            & 14 (PWM)  & Geschwindigkeitsregelung\\
+        Motor links   	    & 7         & Fahrtrichtung vorwärts\\
+                            & 1         & Fahrtrichtung rückwärts\\
+                            & 12 (PWM)  & Geschwindigkeitsregelung\\    
+        Motoren Greifer   	& 5         & Greifer öffnen\\
+                            & 6         & Greifer schließen\\
+                            & 13 (PWM)  & Geschwindigkeitsregelung\\
+        Ultraschall rechts 	& 11        & Trigger\\
+                            & 9         & Echo\\
+        Ultraschall links   & 20        & Trigger\\
+                            & 16        & Echo \\ 
+        Infrarot links      & 2         & Input\\
+        Infrarot rechts     & 3         & Input\\
+        Infrarot mitte      & 4         & Input\\\bottomrule
     \end{tabular}    
 \end{dhbwtable}
-
-
-% fritzing wiring diagram
