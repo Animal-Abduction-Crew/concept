@@ -22,34 +22,34 @@ Ursprünglich war vorgesehen Ultraschallsensoren zur Ergänzung der Objekterkenn
 Falls sich ein Tier seitlich des \ac{AAR} befände, könnte es mit einem Ultraschallsensor erkannt werden, welcher eine höhere Entfernung detektierten würde, als die Entfernung zu den gekippten Tischen, welche das Spielfeld eingrenzen, da ein Plüschtier die Ultraschallsignale des Sensors absorbieren würde.
 Da die Objekterkennung aber zuverlässig funktioniert sind aktuell keine Ultraschallsensoren auf dem \ac{AAR} installiert.
 
+\autoref{tab:aar_parts} listet die Hauptkomponenten des \ac{AAR}, sowie eine Beschreibung deren Aufgaben.
+
 \begin{dhbwtable}{%
-    caption	= Aufbau Roboter,
-    label	= tab:show_parts_at_aar,
+    caption	= Bauteile des \ac{AAR},
+    label	= tab:aar_parts,
     source	= Eigene Darstellung,
     float   = h!
 }
     \begin{tabularx}{\textwidth}{lXX}
         \toprule
-        \textbf{Nummer}     & \textbf{Bauteil}              & \textbf{Beschreibung} \\\midrule
-        1   	            & Akku                          & Stromversorgung für Motoren und Raspberry Pi \\
-        2                   & Raspberry Pi                  & Recheneinheit und Ansteuerungsmodul \\
-        3                   & Ultraschallsensor rechts      & Erkennung falls sich ein Tier Rechts des AAR befindet \\
-        4                   & Ultraschallsensor links       & Erkennung falls sich ein Tier Links des AAR befinde \\
-        5                   & H-Brücke für den Greifer      & Steuert die Motoren für den Greifer an \\
-        6                   & H-Brücke für den Antrieb      & Steuert die Motoren des Antriebes an \\
-        7                   & Spannungswandler              & regelt die Spannung des Akkus für den Raspberry auf 5 Volt runter \\
-        8                   & Motor+Getriebe Greifer rechts & bewegt den rechten Teil des Greifarms \\
-        9                   & Motor+Getriebe Greifer links  & bewegt den linken Teil des Greifarms \\
-        10                  & Infrarot links                & erkennt eine Linie auf der linken Seite \\
-        11                  & Infrarot rechts               & erkennt eine Linie auf der rechten Seite \\
-        12                  & Infrarot mitte                & erkennt ob sich ein Tier vor dem AAR befindet \\
-        13                  & Kamera                        & wird für die Objekterkennung genutzt \\
-        14                  & Antriebsmotor rechts          & dreht das rechte Rad \\
-        15                  & Antriebsmotor links           & dreht das linke Rad \\\bottomrule
-    \end{tabularx}    
+        \textbf{Nummer} & \textbf{Bauteil} & \textbf{Beschreibung} \\\midrule
+        1 & Akku                                & Stromversorgung der Motoren und des Raspberry Pis \\
+        2 & Raspberry Pi                        & Einplatinencomputer \\
+        3 & Ultraschallsensor rechts            & Plüschtiererkennung rechts \\
+        4 & Ultraschallsensor links             & Plüschtiererkennung links \\
+        5 & H-Brücke für den Greifer            & Steuert die Motoren der Greifer an \\
+        6 & H-Brücke für den Antrieb            & Steuert die Motoren des Antriebes an \\
+        7 & Spannungswandler                    & Regelt die Spannung des Akkus für den Raspberry auf 5 V \\
+        8 & Motor \& Getriebe Greifer rechts    & Bewegt den rechten Greifarm \\
+        9 & Motor \& Getriebe Greifer links     & Bewegt den linken Greifarm \\
+        10& Infrarotsensor links                & Linke Linienerkennung \\
+        11& Infrarotsensor rechts               & Rechte Linienerkennung \\
+        12& Infrarotsensor mitte                & Plüschtiererkennung vorne \\
+        13& Kamera                              & Objekterkennung \\
+        14& Antriebsmotor rechts                & Dreht das rechte Rad \\
+        15& Antriebsmotor links                 & Dreht das linke Rad \\\bottomrule
+    \end{tabularx}
 \end{dhbwtable}
-
-\autoref{tab:show_parts_at_aar} listet die Hauptkomponenten des \ac{AAR}, sowie eine Beschreibung derer Aufgaben.
 
 \subsubsection{Schaltplan}
 
@@ -57,7 +57,7 @@ Für die Umsetzung der spezifizieren Funktionalitäten, wie etwa der Greifmechan
 In \autoref{app:wiring_diagram} ist ein Schaltplan zu sehen, welcher die Verkabelung aller Komponenten über ein Breadboard mit dem Raspberry Pi zeigt und \autoref{tab:gpio_pins} beschreibt, die Funktionalitäten der verwendeten Pins.
 
 \begin{dhbwtable}{%
-    caption	= Belegung der GPIO Pins,
+    caption	= Belegung der \ac{GPIO} Pins,
     label	= tab:gpio_pins
 }
     \begin{tabular}{llll}
