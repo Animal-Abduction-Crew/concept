@@ -1,0 +1,14 @@
+\subsection{Exkurs: Sprachsteuerung}
+
+Für die Sprachsteuerung des \acp{AAR} wird die Open-Source Software \enquote{Rhasspy} genutzt.
+Durch die Integration der ebenfalls quelloffenen freien Bibliotheken \enquote{porcupine} für die Wakeword-Erkennung, \enquote{Pocketsphinx} für Umwandlung von Sprache in Text und \enquote{fuzzywuzzy} für die Erkennung der Absicht eines Sprachbefehls, gelingt es Rhasspy eine Lösung bereitzustellen, welche offline, ohne Einbindung von Diensten Dritter funktioniert.\ifootcite{rhasspy_about}
+
+Rhasspy bietet mehrere Schnittstellen, welche genutzt werden können um erkannte Absichten in Sprachbefehlen ein andere Dienste weiterzuleiten.
+Für die Integration Rhasspys in den \ac{AAR} bieten sich grundlegend zwei Schnittstellen an:
+Zum einen kann ein Shellskript aufgerufen werden, wobei die Eigenschaften der erkannten Absicht über Standardeingabe-Parameter übergeben werden können.
+Alternativ kann Rhasspy auch so konfiguriert werden, dass erkannte Absichten als \ac{JSON} Objekte über eine \ac{HTTP} POST-Request an einen Webserver weitergereicht werden können.\ifootcite{rhasspy_intent_handling}
+
+Für die Interaktion mit dem \ac{AAR} sind vorerst die Befehle \enquote{Hole das Tier X!} und \enquote{Führe eine Selbstcheck durch!} angedacht, wobei beide Absichten in mehreren Formulierungen in deutscher Sprache eingerichtet werden.
+Die Rückmeldung bei erfolgreicher Erkennung eines Befehl erfolgt per Lautsprecher.
+So berichtet der \ac{AAR} bspw. nach dem Befehl \enquote{Hole das Tier X!} welches Tier erkannt wurde.
+Für die Umwandlung von Text zu Sprache wird die Bibliothek \enquote{pyttsx3} eingesetzt, welche ebenfalls vollständig offline funktionsfähig ist.
