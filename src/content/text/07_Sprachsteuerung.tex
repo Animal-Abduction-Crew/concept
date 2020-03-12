@@ -12,3 +12,5 @@ Für die Interaktion mit dem \ac{AAR} sind vorerst die Befehle \enquote{Hole das
 Die Rückmeldung bei erfolgreicher Erkennung eines Befehl erfolgt per Lautsprecher.
 So berichtet der \ac{AAR} bspw. nach dem Befehl \enquote{Hole das Tier X!} welches Tier erkannt wurde.
 Für die Umwandlung von Text zu Sprache wird die Bibliothek \enquote{pyttsx3} eingesetzt, welche ebenfalls vollständig offline funktionsfähig ist.
+Zusätzlich kann der Lautsprecher während der Entwicklung der Software des \acp{AAR} dazu genutzt werden, den Ablauf der implementierten Algorithmen während Tests besser nachvollziehen zu können, indem der Roboter über den Lautsprecher ausgibt, welche Anweisungen er gerade ausführt.
+Dazu muss lediglich ein existentes Logging-System um einen \enquote{Log2Speech} Adapter erweitert oder ein neues minimales Logging-System implementiert werden.
