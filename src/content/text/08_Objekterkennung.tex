@@ -9,10 +9,12 @@ Derzeit wird grundsätzlich zwischen zwei Methoden der Objekterkennung unterschi
 Beim Ansatz des maschinellen Lernens werden zunächst manuell Merkmale definiert, welche dann mit Methoden, wie z.B. der Viola-Jones-Methode, maschinell erkannt werden können.\ifootcite{viola_jones}
 Der Deep-Learning-Ansatz hingegen setzt lediglich eine große Menge zuvor klassifizierter Objekte voraus.
 Unter Verwendung eines \ac{CNN} setzen Girshick, Donahue, Darrell und Malik 2013 mit \ac{R-CNN} diesen Ansatz erstmals um.\ifootcite{rcnn}
-Mit dem \ac{SSD} Ansatz und dem \ac{YOLO} Ansatz wurden in 2015 die Anforderungen an Rechenkapazität für die Durchführung der Objekterkennung deutlich reduziert.\ifootcite{ssd,yolov1}
-In 2018 veröffentlichten Redmon und Farhadi die dritte Version des \ac{YOLO} Algorithmus, welche z.Z. die schnellste und gleichzeit auch eine akkurate Objekterkennung ist.\ifootcite{yolov3}
+Mit dem \ac{SSD} Ansatz und dem \ac{YOLO} Ansatz wurden in 2015 die Anforderungen an Rechenkapazität für die Durchführung der Objekterkennung nach Deep-Learning-Ansatz deutlich reduziert.\ifootcite{ssd,yolov1}
+In 2018 veröffentlichten Redmon und Farhadi die dritte Version des \ac{YOLO} Algorithmus, welche z.Z. die schnellste ausreichend akkurate Objekterkennung ist.\ifootcite{yolov3}
 \ac{YOLO} in der Version 3 wendet im Gegensatz zu vorherigen Methoden ein einziges neuronales Netz auf das gesamte Bild an. Dieses Netzwerk unterteilt das Bild in Regionen und sagt für jede Region Bounding Boxes und Wahrscheinlichkeiten voraus.
-So betrachtet der Algorithmus das gesamte Bild zur Testzeit, wodurch auch der globale Kontext berücksichtigt wird. Die Vorhersagen werden mit einer einzigen Netzwerkauswertung erstellt, im Gegensatz zu Systemen wie \ac{R-CNN}, die Tausende für ein einziges Bild benötigen, da die Erkennung von potentiellen Objekten nicht vom selben neuralen Netz ausgeführt wird.\ifootcite{yolov3_homepage}
+So betrachtet der Algorithmus das gesamte Bild zur Testzeit, wodurch auch der globale Kontext berücksichtigt wird.
+Die Vorhersagen werden im Gegensatz zu Methoden, wie z.B. \ac{R-CNN}, also mit einer einzigen Netzwerkauswertung erstellt.
+Systeme wie \ac{R-CNN} benötigen tausende Auswertungen für ein einziges Bild, da die Erkennung von potentiellen Objekten nicht vom selben neuralen Netz ausgeführt wird, welches auch die Objektklassifizierung vornimmt.\ifootcite{yolov3_homepage}
 
 So setzt der \ac{AAR}, der geringen Erkennungszeiten wegen, auf den Algorithmus \ac{YOLO} in der Version 3.
 
