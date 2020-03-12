@@ -23,23 +23,22 @@ So setzt der \ac{AAR}, der geringen Erkennungszeiten wegen, auf den Algorithmus 
 Für die Erkennung der Plüschtiere mit \ac{YOLO}v3 muss zunächst ein bestehendes \ac{YOLO}-Modell auf die neuen Objektklassen eingelernt werden.
 Dazu werden von jeder Objektklasse idealerweise tausende Bilder benötigt, welche in unterschiedlichen Lichtverhältnissen, Hintergründen, Winkeln, Kombinationen und Entfernungen aufgenommen wurden.
 Diese Bilder müssen dann anschließend manuell klassifiziert werden.
+\newpage
 
 \dhbwFigure{%
     caption	= Aufnehmen von Trainingsdaten,
     label	= fig:capture_training_data,
     path	= content/assets/training_data_capture_setup.jpg,
-    source	= Eigene Darstellung
 }
 
 \autoref{fig:capture_training_data} zeigt die Aufzeichnung unserer Trainingsdaten.
-Insgesamt wurden über 13000 Bilder (mehr als 2000 pro Objektklasse) erstellt und einzeln manuell mit Hilfe des Tools LabelImg klassifiziert.
+Insgesamt wurden über 13000 Bilder (mehr als 2000 pro Objektklasse) erstellt und einzeln manuell mit Hilfe des Tools \enquote{LabelImg} klassifiziert.
 
 \dhbwFigure{%
     caption	= Labeln von Trainingsdaten,
     label	= fig:labelimg,
     path	= content/assets/labelimg.jpg,
-    source	= Eigene Darstellung,
-    width	= 0.5\textwidth
+    width	= 0.55\textwidth
 }
 
 Beim Labeln muss um jedes zu klassifizierende Objekt manuell mit einer Bounding Box gekennzeichnet werden.
@@ -70,7 +69,7 @@ Mit dem Modell \enquote{yolov3-tiny} können bspw. mit einer Pascal Titan X bis 
 \autoref{tab:model_perf} zeigt die Performance verschieden konfigurierter Modelle zur Erkennung der Plüschtiere auf dem Raspberry Pi.
 Jedes Modell wurde über 10000 Iterationen mit Hilfe der Bibliothek \enquote{darknet} von GitHub Nutzer \enquote{AlexeyB} auf einer kostenlosen virtuellen Maschine von Google Colab eingelernt.
 Die Genauigkeit wurde auf einer Skala von 0-10 definiert, wobei 10 bedeuten würde, dass alle getesteten Fälle so erkannt wurden, dass der \ac{AAR} seine Aufgabe erfüllen könnte.
-Da die Objekterkennung nicht mehr als zwei mal pro Sekunde durchgeführt werden muss nutzt der \ac{AAR} die Modellkonfiguration \enquote{yolov3-tiny-3l-256x192}, wobei \enquote{3l} für die dritte \ac{YOLO}-Schicht im Netzwerk steht.
+Da die Objekterkennung nicht mehr als zwei mal pro Sekunde durchgeführt werden muss, nutzt der \ac{AAR} die Modellkonfiguration \enquote{yolov3-tiny-3l-256x192}, wobei \enquote{3l} für die dritte \ac{YOLO}-Schicht im Netzwerk steht.
 
 \autoref{app:object_detection_training_ad} fasst die Aktivitäten beim 
 Erstellen eines benutzerdefiniterten \ac{YOLO}v3 Modells in Form eines Aktivitätendiagramms zusammen.
@@ -81,7 +80,7 @@ Für die eigentliche Objekterkennung wird auf dem Raspberry Pi zuerst ein separa
 Darin wird zunächst das benutzerdefinierte \ac{YOLO}-Modell in den Zwischenspeicher geladen.
 Anschließend wird mit der Bibliothek OpenCV ein Bild, in der Auflösung des verarbeitenden \ac{YOLO}-Modells, über die \ac{CSI}-Schnittstelle aufgenommen.
 Das Bild wird dann mit OpenCV und dem \ac{YOLO}-Modell ausgewertet.
-Anschließend wird überprüft ob die Temperatur der \ac{CPU} noch im zulässigen Bereich ist.
+Anschließend wird überprüft, ob die Temperatur der \ac{CPU} noch im zulässigen Bereich ist.
 Sollte die \ac{CPU} zu warm geworden sein wird gewartet, bis die Temperatur abgenommen hat.
 Das Aufnehmen eines Bildes, dessen Verarbeitung und die Überwachung der \ac{CPU}-Temperatur wird wiederholt, bis der Thread extern gestoppt wird.
 \autoref{app:actual_objecti_detection_ad} fasst die Aktivitäten bei der Objekterkennung auf dem Raspberry Pi in Form eines Aktivitätendiagramms zusammen.
